@@ -1,0 +1,22 @@
+>(define count
+	(lambda (ls)
+		(if (null? ls)
+		0
+		(+ (count (cdr ls)) 1))))
+>(define addlists
+	(lambda a b)
+		(cond
+			[(null? 'a) b]
+			[(null? 'b) a]
+			[else (cons '(car a) '(car b))]
+
+>(define lisp-cdr
+	(lambda (x)
+	(if (null? x)
+		'()
+		(cdr x))))
+>(define join
+	(lambda (a) (b)
+	(if (null? a)
+		(b)
+		(cons a (cdr b)))))
