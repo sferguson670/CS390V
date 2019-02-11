@@ -3,7 +3,8 @@
       (cond
         [(null? a) b]
         [(null? b) a]
-        [else (cons (+ (car a) (car b)) (vecadd (cdr a) (cdr b)))]
+        [(pair? a) (cons (+ (car a) (car b)) (vecadd (cdr a) (cdr b)))]
+        [else (+ a b)]
         )))
 
 > (define vecfn
