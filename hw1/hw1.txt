@@ -7,15 +7,16 @@
         )))
 
 > (define vecfn
-    (lambda (op a b)
-      (cond 
-        [(null? a) b]
-        [(null? b) a]
-        [(eqv? op -) (cons (- (car a) (car b)) (vecfn - (cdr a) (cdr b)))]
-        [(eqv? op +) (cons (+ (car a) (car b)) (vecfn + (cdr a) (cdr b)))]
-        [(eqv? op /) (cons (/ (car a) (car b)) (vecfn / (cdr a) (cdr b)))]
-        [else (display 'oops)]
-        )))
+      (lambda (op a b)
+        (cond 
+          [(null? a) b]
+          [(null? b) a]
+          [(eqv? op -) (cons (- (car a) (car b)) (vecfn - (cdr a) (cdr b)))]
+          [(eqv? op +) (vecadd a b)]
+          [(eqv? op /) (cons (/ (car a) (car b)) (vecfn / (cdr a) (cdr b)))]
+          [(eqv? op *) (cons (* (car a) (car b)) (vecfn * (cdr a) (cdr b)))]
+          [else (display 'oops)]
+          )))
 
 > (define-syntax vecfun
     (syntax-rules ()
