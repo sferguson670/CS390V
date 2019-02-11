@@ -1,11 +1,5 @@
 > (define vecadd
     (lambda (a b)
-      (if (null? a)
-          b
-          (cons (+ (car a) (car b)) (vecadd (cdr a) (cdr b ))))))
-
-> (define vecadd
-    (lambda (a b)
       (cond
         [(null? a) b]
         [(null? b) a]
@@ -24,7 +18,11 @@
         )))
 
 > (define-syntax vecfun
-    (syntax-rules (+)
-      [(vecfun + a b)
-       (vecadd a b)]
+    (syntax-rules ()
+      [(vecfun op a b)
+       (let ([x op])
+         (if (eqv? x +)
+             (vecadd a b)
+             (vecfn op a b)
+             ))]
       ))
