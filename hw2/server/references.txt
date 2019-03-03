@@ -1,0 +1,19 @@
+Good references:
+
+https://javarevisited.blogspot.com/2015/06/how-to-create-http-server-in-java-serversocket-example.html
+
+http://www.java2s.com/Code/Java/Network-Protocol/AverysimpleWebserverWhenitreceivesaHTTPrequestitsendstherequestbackasthereply.htm
+
+https://stackoverflow.com/questions/12386509/java-how-to-handle-http-get-request-after-establishing-tcp-connection
+
+http://www.java2s.com/Code/Java/Network-Protocol/AverysimpleWebserverWhenitreceivesaHTTPrequestitsendstherequestbackasthereply.htm
+
+https://www.w3schools.com/tags/ref_httpmethods.asp
+
+https://docs.oracle.com/javase/tutorial/networking/sockets/clientServer.html
+
+https://serverfault.com/questions/725262/what-causes-the-connection-refused-message
+
+https://alvinalexander.com/scala/sbt-how-to-compile-run-package-scala-project
+
+https://stackoverflow.com/questions/3732109/simple-http-server-in-java-using-only-java-se-api
