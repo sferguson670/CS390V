@@ -48,3 +48,5 @@ object EchoServer {
 }
 
 //Used Oracle's Java "All about sockets" documentation
+//Used Scala's documentation about futures and promises
+//https://alvinalexander.com/scala/concurrency-with-scala-futures-tutorials-examples
