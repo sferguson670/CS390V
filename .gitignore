@@ -1,0 +1,8 @@
+
+*.xml
+*.iml
+*.properties
+*.class
+*.cache
+*.css
+*.xsl
