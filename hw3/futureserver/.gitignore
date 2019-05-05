@@ -1,0 +1,6 @@
+# Don't track content of these folders
+project/target
+target/scala-2.12/resolution-cache
+target/streams
+
+
