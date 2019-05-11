@@ -5,7 +5,7 @@ defmodule EchoServer do
     {:ok, socket} = :gen_tcp.listen(port,
       [:binary, packet: :line, active: false, reuseaddr: true])
     Logger.info "Accepting connections on port #{port}"
-	IO.puts "Enter name of html file"
+	Logger.info "Enter name of html file"
     loop_acceptor(socket)
   end
 
@@ -34,11 +34,12 @@ defmodule EchoServer do
   end
   
   defp getFile(name) do
-	  file = "#{name}.html"
+	  fileName = "#{name}.html"
+	  fileName = String.replace(fileName, "\r\n", "")
 	  
-	  case File.open(file) do
-		  {:ok, file} -> "HTTP/1.1 200\nContent-Type: text/plain\nConnection: close\n" <> File.read(file)
-		  {:error, _} -> "File not found\nHTTP 404\n"
+	  case File.open(fileName) do
+		  {:ok, file} -> "HTTP/1.1 200\nContent-Type: text/plain\nConnection: close\n" <> IO.read(file, :all)
+		  {:error, _} -> "HTTP 404\nFile not found"
 	  end
   end
   @doc """
@@ -46,5 +47,9 @@ defmodule EchoServer do
   https://codewords.recurse.com/issues/five/building-a-web-framework-from-scratch-in-elixir
   https://elixir-lang.org/crash-course.html
   https://elixir-lang.org/getting-started/io-and-the-file-system.html
+  https://hexdocs.pm/elixir/File.html
+  https://www.tutorialspoint.com/elixir/elixir_file_io.htm
+  https://code.tutsplus.com/tutorials/working-with-file-system-in-elixir--cms-28869
+  https://joyofelixir.com/8-strings-input-and-output/
   """  
 end
